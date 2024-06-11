@@ -375,6 +375,20 @@ public:
     }
 
     /**
+     * \brief Indicates whether this is a local address.
+     */
+    bool is_local() const {
+        return (*begin() & 0x02);
+    }
+
+    /**
+     * \brief Indicates whether this is a global address.
+     */
+    bool is_global() const {
+        return !is_local();
+    }
+
+    /**
      * \brief Convert this address to a hex-notation std::string address.
      * 
      * \return std::string containing the hex-notation address.
