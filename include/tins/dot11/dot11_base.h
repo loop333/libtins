@@ -129,7 +129,8 @@ public:
         TCLAS_PROCESSING,
         HT_CAPABILITY,
         QOS_CAPABILITY,
-        RSN = 48,
+        ERP_INFO_OLD,
+        RSN,
         EXT_SUPPORTED_RATES = 50,
         AP_CHANNEL_REPORT,
         NEIGHBOR_REPORT,
@@ -182,7 +183,7 @@ public:
         DMS_RESP,
         LINK_ID,
         WAKEUP_SCHEDULE,
-        CH_SWITCH_TIMING,
+        CH_SWITCH_TIMING = 104,
         PTI_CONTROL,
         TPU_BUFFER_STATUS,
         INTERWORKING,
@@ -269,7 +270,8 @@ public:
         DEV_LOC = 204,
         WHITE_SPACE_MAP,
         FINE_TUNING_MEASUREMENT_PARAMS,
-        VENDOR_SPECIFIC = 221
+        VENDOR_SPECIFIC = 221,
+        ELEMENT_ID_EXTENSION = 255
     };
 
     /**
