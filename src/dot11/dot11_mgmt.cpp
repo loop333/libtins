@@ -496,6 +496,17 @@ Dot11ManagementFrame::vendor_specific_type::from_bytes(const uint8_t* buffer, ui
     );
 }
 
+Dot11ManagementFrame::element_id_extension_type
+Dot11ManagementFrame::element_id_extension_type::from_bytes(const uint8_t* buffer, uint32_t sz) {
+    if (sz < 2) {
+      throw malformed_option();
+    }
+    return element_id_extension_type(
+      *reinterpret_cast<const Dot11ManagementFrame::element_id_extension_type::id_type*>(buffer),
+      byte_array(buffer + 2, buffer + sz)
+    );
+}
+
 // Options
 
 Dot11ManagementFrame::fh_params_set

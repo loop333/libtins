@@ -653,7 +653,23 @@ public:
 
         static vendor_specific_type from_bytes(const uint8_t* buffer, uint32_t sz);
     };
-    
+
+    /**
+     * The type used to store the Element ID Extension option data.
+     */
+    struct element_id_extension_type {
+        typedef uint16_t id_type;
+
+        id_type    id;
+        byte_array data;
+
+        element_id_extension_type(const id_type& id = 0,
+                                  const byte_array& data = byte_array())
+        : id(id), data(data) { }
+
+        static element_id_extension_type from_bytes(const uint8_t* buffer, uint32_t sz);
+    };
+
     /**
      * The type used to store the QOS capability tagged option data.
      */
